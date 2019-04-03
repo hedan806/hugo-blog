@@ -1,6 +1,6 @@
-[submodule "public"]
-	path = public
-	url = https://github.com/hedan806/hedan806.github.io.git
 [submodule "themes/even"]
 	path = themes/even
-	url = https://github.com/olOwOlo/hugo-theme-even
+	url = git@github.com:olOwOlo/hugo-theme-even.git
+[submodule "public"]
+	path = public
+	url = git@github.com:hedan806/hedan806.github.io.git
