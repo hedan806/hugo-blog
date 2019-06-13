@@ -20,13 +20,11 @@ categories: ["jvm"]
 
 所以更好的办法就是直接在服务器上利用``MAT``进行分析。
 
-> 对于``Dump``的生成，也可以手动导出
->
-> ```bash
-> jmap -dump:live,format=b,file=m.hprof PID
-> ```
+对于``Dump``的生成，也可以手动导出
 
-
+```bas
+jmap -dump:live,format=b,file=m.hprof PID
+```
 
 ## 2. 下载``Linux``下的``MAT``
 
