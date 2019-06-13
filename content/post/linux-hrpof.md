@@ -32,7 +32,7 @@ categories: ["jvm"]
 
 下载对应的版本：
 
-![](/home/hedan/Documents/honlyc.com/static/mat-download.png)
+![mat-download](/mat-download.png)
 
 最后解压即可。
 
@@ -47,13 +47,13 @@ echo $! > pid
 
 等待执行完毕后，就能看到结果了：
 
-![](/home/hedan/Documents/honlyc.com/static/mat-done.png)
+![mat-done](/mat-done.png)
 
 ## 4. 打开并分析报告
 
 在拿到结果后，只需要吧三个``.zip``包传到本地，解压后，用浏览器打开网页即可。
 
-![](/home/hedan/Documents/honlyc.com/static/mat-report.png)
+![mat-report](/mat-report.png)
 
 通过这个就可以来愉快地分析啦。
 
