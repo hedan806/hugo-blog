@@ -34,4 +34,4 @@ git push origin master
 # Come Back
 cd ..
 
-./hugo-ssh
+ssh honlyc@47.101.32.60 "cd blog/hedan806.github.io && git pull"
