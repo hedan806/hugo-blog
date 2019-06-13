@@ -26,6 +26,8 @@ categories: ["jvm"]
 > jmap -dump:live,format=b,file=m.hprof PID
 > ```
 
+
+
 ## 2. 下载``Linux``下的``MAT``
 
 下载地址：<https://www.eclipse.org/mat/downloads.php> 
