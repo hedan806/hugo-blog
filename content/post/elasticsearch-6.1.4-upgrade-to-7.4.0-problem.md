@@ -69,3 +69,65 @@ PUT _cluster/settings
 }
 ```
 
+## 2. ``Mapping``动态字段设置
+
+当前线上集群的磁盘占用大小：
+
+![](http://img.honlyc.com/20191113143106.png)
+
+而``V2``集群的磁盘占用大小为：
+
+![](http://img.honlyc.com/20191113143202.png)
+
+可以看到，同样的数据量，磁盘占用相差了 30G 左右，差距很大。
+
+经分析，查看两者的``Schema``，``V2``版本的``schema``多出了一些动态创建的字段，而这些字段本身是不需要的，导致磁盘占用变大，部分数据如下：
+
+```json
+       "picUrl" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+        "platform" : {
+          "type" : "keyword",
+          "eager_global_ordinals" : true
+        },
+        "position" : {
+          "type" : "text",
+          "fields" : {
+            "keyword" : {
+              "type" : "keyword",
+              "ignore_above" : 256
+            }
+          }
+        },
+```
+
+因为默认的``dynamic``是``true``，所以在添加数据时，对于没有在``mapping``中定义的字段，``es``会自动添加该字段。
+
+解决方案：
+
+在``mapping``中，指定``dynamic``为``false``：
+
+```json
+"mappings" : {
+      "dynamic": false, 
+      "_source" : {
+        "enabled" : false
+      },
+      ...}	
+```
+
+> 对于``dynamic``字段的取值有三种：
+>
+> ``true``：允许``ES``动态创建``mapping``；
+>
+> ``false``：不允许``ES``动态创建``mapping``，但是数据可以写入；
+>
+> ``strict``：当写入数据中有``mapping``定义之外的数据，直接报错，不能进行写入；
+
