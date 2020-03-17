@@ -1,12 +1,12 @@
 ---
-title: "Ambari in Action 1"
+title: "Ambari 的安装"
 date: 2020-02-20T14:49:01+08:00
 draft: true
+tags: ["install"]
+categories: ["ambari"]
 ---
 
 [TOC]
-
-# Ambari 的安装
 
 因为各种原因，如果直接用``Ambari``的官方包进行安装时，速度会极慢，而官方本身也是支持离线安装的。所以，本文使用离线安装的方式。
 
