@@ -31,7 +31,7 @@ curl -i -u admin:admin -H 'X-Requested-By: ambari' -X POST  "http://ambari-serve
 2. 编辑``ambari.properties``文件，添加一行：
 
 ```properties
-notification.dispatch.alert.script=/contrib/ambari-alerts/scripts/scaler-notification.py
+notification.dispatch.alert.script=/var/lib/ambari-alerts/scripts/scaler-notification.py
 ```
 
 3. 编写``scaler-notification.py``文件：
@@ -61,7 +61,7 @@ if __name__ == '__main__':
 4. 修改``scaler-notification.py``文件的权限为可执行文件：
 
 ```bash
-chmod +x /contrib/ambari-alerts/scripts/scaler-notification.py
+chmod +x /var/lib/ambari-alerts/scripts/scaler-notification.py
 ```
 
 5. 重启``ambari``服务
@@ -80,3 +80,10 @@ tail -f /var/log/ambari-server/custom_notification.log
 
 可以看到实际的告警日志了。
 
+# 问题排查
+
+1. 如果在配置后，没有生成告警的日志文件，则需要查看``/var/log/ambari-server/ambari-server.log``，应该有类似错误日志：
+
+![](http://img.honlyc.com/20200716145504.png)
+
+此时，只需要按照路径，把对应文件拷贝过去，然后修改一下权限``chmod +x filename``即可。
