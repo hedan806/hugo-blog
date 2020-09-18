@@ -1,8 +1,10 @@
+---
 title: "Custom Elasticsearch Shard Allocation Decider"
 date: 2019-11-05T16:08:31+08:00
 draft: true
 tags: ["plugins","shard"]
 categories: ["elk"]
+---
 
 [TOC]
 
