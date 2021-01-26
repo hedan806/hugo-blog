@@ -35,4 +35,4 @@ git push origin master
 cd ..
 
 #ssh honlyc@47.101.32.60 "cd blog/hedan806.github.io && git pull"
-ssh root@39.98.62.127 "cd /home/tjny/hedan806.github.io && git pull"
+ssh root@39.98.62.127 "cd /home/tj/dnmp/www/hedan806.github.io && git pull"
