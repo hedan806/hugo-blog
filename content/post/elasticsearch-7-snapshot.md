@@ -1,6 +1,6 @@
 ---
 title: "Elasticsearch 7.4.0 使用 Snapshot 做数据迁移"
-date: 2020-03-16T20:48:13+08:00
+date: 2020-07-16T20:48:13+08:00
 draft: true
 tags: ["auth","7.4.0"]
 categories: ["elasticsearch"]#
